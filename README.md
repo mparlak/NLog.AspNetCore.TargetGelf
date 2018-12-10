@@ -9,3 +9,38 @@ You should install [NLog.AspNetCore.TargetGelf with NuGet](https://www.nuget.org
 Or via the .NET Core command line interface:
 
     dotnet add package NLog.AspNetCore.TargetGelf
+    
+### Configuration
+
+Here is a sample nlog configuration snippet:
+
+```csharp
+    <?xml version="1.0" encoding="utf-8" ?>
+    <nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          autoReload="true"
+          throwExceptions="false"
+          internalLogLevel="Off"
+          internalLogFile="c:\temp\internal-nlog.txt">
+
+      <extensions>
+        <add assembly="Nlog.AspNetCore.TargetGelf"/>
+      </extensions>
+
+      <targets>
+        <target name="graylog"
+                xsi:type="Gelf"
+                endpoint="udp://127.0.0.1:12201"
+                facility="console-runner"
+                sendLastFormatParameter="true">
+          <!-- Optional parameters -->
+          <!--<parameter name="param1" layout="${longdate}"/>
+          <parameter name="param2" layout="${callsite}"/>-->
+        </target>
+      </targets>
+
+      <rules>
+        <logger name="*" minlevel="Error" writeTo="graylog" />
+      </rules>
+    </nlog>
+```
