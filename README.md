@@ -1,5 +1,10 @@
 # NLog.AspNetCore.TargetGelf
 NLog.AspNetCore.TargetGelf is an NLog target implementation to push log messages to GrayLog. It implements the Gelf specification and communicates with GrayLog server via UDP.
+
+### History
+
+Code forked from https://github.com/akurdyukov/Gelf4NLog which is a fork from https://github.com/RickyKeane/Gelf4NLog who forked the origonal code from https://github.com/seymen/Gelf4NLog
+
 ### Installing NLog.AspNetCore.TargetGelf
 
 You should install [NLog.AspNetCore.TargetGelf with NuGet](https://www.nuget.org/packages/NLog.AspNetCore.TargetGelf):
