@@ -10,7 +10,15 @@
     <PackageIconUrl>https://github.com/mparlak/NLog.AspNetCore.TargetGelf</PackageIconUrl>
     <RepositoryUrl>https://github.com/mparlak/NLog.AspNetCore.TargetGelf</RepositoryUrl>
     <PackageTags>gelf,graylog,nlog</PackageTags>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.1.1" />
